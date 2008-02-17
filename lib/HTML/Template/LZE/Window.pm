@@ -1,8 +1,6 @@
 package HTML::Template::LZE::Window;
-
-# use strict;
-# use warnings;
-no warnings 'redefine';
+use strict;
+use warnings;
 require Exporter;
 use vars qw($DefaultClass @EXPORT  @ISA $class $server $hidden );
 our $style = 'Crystal';
@@ -11,11 +9,11 @@ our $id    = 'a';
 our ($collapse, $resizeable, $closeable, $moveable) = (0) x 4;
 
 @ISA = qw(Exporter);
-use HTML::Template::LZE::Template;
-@HTML::Template::LZE::Window::ISA         = qw(HTML::Template::LZE::Template);
+use HTML::Template::LZE;
+@HTML::Template::LZE::Window::ISA         = qw(HTML::Template::LZE);
 @HTML::Template::LZE::Window::EXPORT_OK   = qw( set_title set_class set_style set_closeable set_resizeable set_collapse set_moveable initWindow windowHeader windowFooter);
 %HTML::Template::LZE::Window::EXPORT_TAGS = ('all' => [qw(set_title set_class set_style set_closeable set_resizeable set_collapse set_moveable initWindow windowHeader windowFooter)]);
-$HTML::Template::LZE::Window::VERSION     = '0.24';
+$HTML::Template::LZE::Window::VERSION     = '0.25';
 
 $DefaultClass = 'HTML::Template::LZE::Window' unless defined $HTML::Template::LZE::Window::DefaultClass;
 
@@ -57,11 +55,7 @@ use HTML::Template::LZE::Window qw(:all);
 
 =head1 DESCRIPTION
 
-
-=head1 BUGS and Limitations
-
-Testet only with  Opera = 8.0, konqueror 3.4, Internet Explorer 6 and firefox 1.0.
-The window shhould dont be moveable or resizeable  if you use  <input />  or <textarea></textarea> tags within in the  body.
+Produce a move-,resize-,collapse- and closeable Html Window.
 
 =cut
 
@@ -227,7 +221,7 @@ sub initWindow {
         my $hash = $p[0];
         $server = $hash->{server};
         $style  = defined $hash->{style} ? $hash->{style} : 'Crystal';
-        $title  = defined $hash->{title} ? $hash->{title} : '';
+        $title  = defined $hash->{title} ? $hash->{title} : $title;
         $id     = defined $hash->{id} ? $hash->{id} : $id;
         $class  = defined $hash->{class} ? $hash->{class} : 'min';
         $hidden = defined $hash->{hidden} ? 'style="visibility:hidden;position:absolute;' : '';
@@ -286,6 +280,11 @@ sub getSelf {
         return @_ if defined($_[0]) && (!ref($_[0])) && ($_[0] eq 'HTML::Template::LZE::Window');
         return (defined($_[0]) && (ref($_[0]) eq 'HTML::Template::LZE::Window' || UNIVERSAL::isa($_[0], 'HTML::Template::LZE::Window'))) ? @_ : ($HTML::Template::LZE::Window::DefaultClass->new, @_);
 }
+
+=head2 see Also
+
+L<CGI::LZE::Blog> L<CGI> L<CGI::LZE> L<HTML::Template::LZE> 
+
 
 =head1 AUTHOR
 

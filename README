@@ -1,4 +1,4 @@
-HTML::Template::LZE::Window version 0.24
+HTML::Template::LZE::Window version 0.25
 =======================================
 
 INSTALLATION
@@ -10,20 +10,15 @@ To install this module type the following:
    make test
    make install
 
-      and copy the startup.pl file from blib/startup.pl to the place you set up in your server config.
-      If you already using a startup file add the following lines:
-
-
 DEPENDENCIES
 
 This module requires these other modules and libraries:
 'Test::More' => 0.7,
-'Test::Signature' => 1.10,
 'Module::Build' => 0.2808,
 'Test::Pod' =>  1.26,
 'Test::Pod::Coverage' =>  0.55,
-'CGI::LZE' => 0.24,
-'HTML::Template::LZE::Template' => 0.24,
+'CGI::LZE' => 0.25,
+'HTML::Template::LZE::Template' => 0.25,
 
 
 COPYRIGHT AND LICENCE
