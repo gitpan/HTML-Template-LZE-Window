@@ -1,6 +1,6 @@
 ---
 name: HTML-Template-LZE-Window
-version: 0.25
+version: 0.26
 author:
   - 'Dirk Lindner <lindnerei@o2online.de>'
 abstract: 'Produce a move-,resize-,collapse- and closeable Html Window'
@@ -8,8 +8,8 @@ license: lgpl
 resources:
   license: http://opensource.org/licenses/artistic-license.php
 requires:
-  CGI::LZE: 0.25
-  HTML::Template::LZE: 0.25
+  CGI::LZE: '>=0.25'
+  HTML::Template::LZE: '>=0.25'
   Module::Build: 0.2808
   Test::More: 0.7
   Test::Pod: 1.26
@@ -17,7 +17,7 @@ requires:
 provides:
   HTML::Template::LZE::Window:
     file: lib/HTML/Template/LZE/Window.pm
-    version: 0.25
+    version: 0.26
 generated_by: Module::Build version 0.2808
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html

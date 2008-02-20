@@ -13,7 +13,7 @@ use HTML::Template::LZE;
 @HTML::Template::LZE::Window::ISA         = qw(HTML::Template::LZE);
 @HTML::Template::LZE::Window::EXPORT_OK   = qw( set_title set_class set_style set_closeable set_resizeable set_collapse set_moveable initWindow windowHeader windowFooter);
 %HTML::Template::LZE::Window::EXPORT_TAGS = ('all' => [qw(set_title set_class set_style set_closeable set_resizeable set_collapse set_moveable initWindow windowHeader windowFooter)]);
-$HTML::Template::LZE::Window::VERSION     = '0.25';
+$HTML::Template::LZE::Window::VERSION     = '0.26';
 
 $DefaultClass = 'HTML::Template::LZE::Window' unless defined $HTML::Template::LZE::Window::DefaultClass;
 
@@ -56,6 +56,12 @@ use HTML::Template::LZE::Window qw(:all);
 =head1 DESCRIPTION
 
 Produce a move-,resize-,collapse- and closeable Html Window.
+
+This Module is mainly written for CGI::LZE::Blog.
+
+But there is no reason to use it not standalone. Also it is much more easier
+
+to update, test and distribute the parts standalone.
 
 =cut
 
